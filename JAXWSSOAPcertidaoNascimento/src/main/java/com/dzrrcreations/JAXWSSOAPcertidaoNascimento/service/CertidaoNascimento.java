@@ -13,8 +13,8 @@ import jakarta.jws.soap.SOAPBinding.Style;
 public interface CertidaoNascimento {
 
 	@WebMethod
-	public int calcularIdade(String idade);
+	public int calcularIdade(String dtNascimento);
 	
 	@WebMethod
-	public String diaSemanaNascimento(String idade);
+	public String diaSemanaNascimento(String dtNascimento);
 }
