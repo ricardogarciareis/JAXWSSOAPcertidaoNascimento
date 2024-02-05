@@ -17,7 +17,7 @@ public class JaxwssoaPcertidaoNascimentoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(JaxwssoaPcertidaoNascimentoApplication.class, args);
 		
-		LOGGER.info("Aplicação inicializada...");
+		LOGGER.info("SERVIÇO CERTIDÃO DE NASCIMENTO inicializado...");
 		CertidaoNascimentoImpl certidaoNascimento = new CertidaoNascimentoImpl();
 		Endpoint.publish("http://localhost:8085/service/certidao", certidaoNascimento);
 		LOGGER.info("Serviço publicado com sucesso");
