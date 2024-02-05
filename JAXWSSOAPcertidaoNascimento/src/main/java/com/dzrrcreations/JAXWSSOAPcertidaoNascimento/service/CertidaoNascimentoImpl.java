@@ -19,12 +19,12 @@ public class CertidaoNascimentoImpl implements CertidaoNascimento {
 	private final static Logger LOGGER = LoggerFactory.getLogger(CertidaoNascimentoImpl.class);
 
 	@Override
-	public int calcularIdade(String idade) {
+	public int calcularIdade(String dtNascimento) {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		int idadeCalculada = 0;
 		try {
 			Calendar dataNascimento = Calendar.getInstance();
-			Date idadeDate = sdf.parse(idade);
+			Date idadeDate = sdf.parse(dtNascimento);
 			dataNascimento.setTime(idadeDate);
 			Calendar hoje = Calendar.getInstance();
 			idadeCalculada = hoje.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR);
@@ -43,13 +43,13 @@ public class CertidaoNascimentoImpl implements CertidaoNascimento {
 	}
 
 	@Override
-	public String diaSemanaNascimento(String idade) {
+	public String diaSemanaNascimento(String dtNascimento) {
 		String dias[] = {"Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"};
 		int dia = 0;
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		try {
 			Calendar dataNascimento = Calendar.getInstance();
-			Date idadeDate = sdf.parse(idade);
+			Date idadeDate = sdf.parse(dtNascimento);
 			dataNascimento.setTime(idadeDate);
 			dia = dataNascimento.get(Calendar.DAY_OF_WEEK);
 		} catch (ParseException e) {
